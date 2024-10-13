@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    height: 100vh; /* Make body fill the entire viewport height */
 }
 
 @font-face {
@@ -11,25 +12,72 @@ body {
     position: relative;
     width: 100%;
     margin: 0px;
+    height: 100vh; 
 }
+.sidebar{
+    position: fixed;
+    width: 33.333%;
+    height: 100%;   
+    font-size: 1.2em;
+    font-family: Norse-Bold;
+    z-index: 1; 
+}
+.odin-img{
+    position: relative;
+    z-index: 2;     
+    width: 20%;
+    opacity: 1;
+    margin-right: 5px; 
+} 
+
+.card-paragraph {
+    opacity: 1.0;
+    color: white;
+    text-align: left;
+    font-family: Norse-Bold;
+    right: 5%;
+    font-size: calc(0.75 * 20vw);
+    line-height: 1;
+    z-index: 2;
+}
+
+.card-body {
+    position: absolute;
+    top: 50%;
+    z-index: 2; 
+    width: 100%;
+    height: 20%;
+    background: black;
+    opacity: 0.6;
+    color: white;
+    top: 8rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.card-heading {
+    position: absolute;
+  }
+
 .card-image {
     position: fixed;
     width: 33.333%;
-    height: 100%;     
+    height: 100%;   
+    z-index: 1;  
 }
 .form-container {
     display: grid;
-    grid-template-rows: 50px 50px;
-    row-gap: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
     position: absolute;
-    width: 66.666%;
     left: 33.333%;
     top: 0;
-    /* background: grey; */
+    width: 66.666%;
+    height: 100%; 
     text-align: left;
     font-size: 1.2em;
-    font-family: roboto;
-    z-index: -1;
+    font-family: Norse-Bold;
+    z-index: 10; 
 }
 
 
@@ -46,23 +94,52 @@ body {
 }
 
 .sign-up{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top 0;
     background: lightgray;
     padding: 0 5% 0 5%;
-    font-family: Norse-Bold;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .form-section{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 33.333%;
-    top:33.333%;
     background: white;
     padding: 0 5% 0 5%;
-    font-family: Norse-Bold;
+    z-index: 11; /* Ensure the form section is above */
+}
 
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-left-column, .form-right-column {
+    width: 48%; /* Take half the available width each */
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    z-index: 12; /* Ensure input fields are editable */
+}
+
+.submit-form {
+    background: lightblue;
+    padding: 0 5% 0 5%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
