@@ -137,3 +137,19 @@ input {
     background-color: #4f6419;
     border-color: #1f2d17;
 }
+
+
+
+input:invalid {
+    border-color: red;
+}
+
+input:valid {
+    border-color: green;
+}
+
+input:focus {
+    border-color: blue;    /* Set border color */
+    outline: 3px solid blue; /* Create a 3px thick blue outline */
+    outline-offset: 2px;    /* Adds space between the border and the outline */
+}
